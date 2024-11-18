@@ -104,11 +104,7 @@
   // Settings for outline
   set outline(depth: 3, indent: true)
   show outline: set align(center)
-  show outline.entry: it => if it.level == 1 {
-    strong(it)
-  } else {
-    it
-  }
+  show outline.entry.where(level: 1): strong
 
   let outline-title(s) = text(size: zh(-2), s.clusters().intersperse(h(2em)).join())
   outline(title: outline-title("目录"))
