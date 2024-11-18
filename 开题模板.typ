@@ -52,7 +52,7 @@
       table(
         stroke: none,
         columns: (6em, 20em),
-        item("论文标题"), content(论文题目),
+        item("论文题目"), content(论文题目),
         item("专业"), content(专业),
         item("研究方向"), content(研究方向),
         item("研究生"), content(研究生),
