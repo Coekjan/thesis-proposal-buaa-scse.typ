@@ -82,10 +82,11 @@
     北京航空航天大学计算机学院硕士学位论文#文档类型#h(1fr)#sym.bullet~~#counter(page).display(numbering)~~#sym.bullet
   ]
 
-  set text(top-edge: 0.7em, bottom-edge: -0.3em)
+  set text(top-edge: 0.75em, bottom-edge: -0.25em)
   set page(header: header, footer: footer(numbering: "i"))
   set par(leading: 0.5em, spacing: 0.5em, first-line-indent: 2em, justify: true)
   set heading(numbering: "1.1.1")
+  set math.equation(numbering: "(1)")
 
   show heading: set block(above: 1.4em, below: 1em)
   show heading: set text(font: ("Times New Roman", "SimHei"), weight: 100)
@@ -98,6 +99,8 @@
   show heading.where(level: 3): set text(size: zh(-4))
   show figure.where(kind: image): set figure.caption(position: bottom)
   show figure.where(kind: table): set figure.caption(position: top)
+  show table.cell.where(y: 0): strong
+  show math.equation.where(block: true): set text(top-edge: "baseline", bottom-edge: "baseline")
 
   counter(page).update(1)
 
