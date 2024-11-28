@@ -20,6 +20,12 @@
     参考文献,
   ) = 论文信息
 
+  let date = if 论文信息.keys().contains("答辩日期") {
+    论文信息.答辩日期
+  } else {
+    datetime.today()
+  }
+
   set document(author: 研究生, title: "毕业论文开题（" + 文档类型 + "）")
   set text(size: zh(-4), lang: "zh", font: ("Times New Roman", "SimSun"))
   set page(number-align: center, margin: (x: 3.17cm, y: 3.4cm))
@@ -67,7 +73,15 @@
 
     v(0.25fr)
 
-    align(center, text(size: zh(-3), font: ("Times New Roman", "SimHei"), datetime.today().display("[year] 年 [month] 月 [day] 日")))
+    align(center, text(
+      size: zh(-3),
+      font: ("Times New Roman", "SimHei"),
+      if 论文信息.keys().contains("答辩日期") {
+        论文信息.答辩日期
+      } else {
+        datetime.today()
+      }.display("[year] 年 [month] 月 [day] 日"),
+    ))
   }
 
   // Basic settings for the outline & main body
